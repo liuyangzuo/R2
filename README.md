@@ -1,8 +1,9 @@
 
-# 🚀  所有的代码都是 Cursor 生成，包括这个 README, 除了这句话
+# 🚀  所有的代码都是 Cursor 生成，包括这个 README，除了这句话和下面一张图
 
-
-
+<p align="center">
+  <img src="https://static.1994131.xyz/uPic/VGgaK7.png" />
+</p>
 
 # Cloudflare R2 图片上传器
 
