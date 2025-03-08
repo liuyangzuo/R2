@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare R2 图片上传器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Cloudflare R2 图片上传器</h1>
+      <p>上传图片到Cloudflare R2存储服务</p>
+    </header>
+
+    <section class="upload-section">
+      <h2>上传图片</h2>
+      <form id="upload-form" enctype="multipart/form-data">
+        <div class="file-input-container">
+          <input type="file" id="image-input" name="image" accept="image/*" required>
+          <label for="image-input" class="file-label">
+            <span class="file-icon">📁</span>
+            <span class="file-text">选择图片</span>
+          </label>
+          <div id="file-name" class="file-name"></div>
+        </div>
+        <div class="preview-container">
+          <img id="image-preview" src="#" alt="预览" style="display: none;">
+        </div>
+        <button type="submit" class="upload-btn">上传</button>
+      </form>
+      <div id="upload-status" class="status"></div>
+    </section>
+
+    <section class="images-section">
+      <h2>已上传图片</h2>
+      <div id="image-list" class="image-grid">
+        <div class="loading">加载中...</div>
+      </div>
+    </section>
+  </div>
+
+  <template id="image-template">
+    <div class="image-item">
+      <div class="image-container">
+        <img src="" alt="上传的图片">
+      </div>
+      <div class="image-info">
+        <div class="image-name"></div>
+        <div class="image-size"></div>
+        <div class="image-actions">
+          <button class="copy-url-btn">复制链接</button>
+          <button class="delete-btn">删除</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html> 

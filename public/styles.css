@@ -1,0 +1,249 @@
+/* 基本样式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #6c757d;
+}
+
+section {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* 上传表单样式 */
+.file-input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #e9ecef;
+  color: #495057;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: #dee2e6;
+}
+
+.file-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.preview-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#image-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.upload-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #0069d9;
+}
+
+.status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.status.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* 图片列表样式 */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+}
+
+.image-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.image-item:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.image-info {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.image-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-size {
+  font-size: 0.8em;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.image-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy-url-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.copy-url-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.copy-url-btn:hover {
+  background-color: #138496;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  section {
+    padding: 15px;
+  }
+} 
